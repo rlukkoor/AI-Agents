@@ -2,15 +2,19 @@ import anthropic
 import requests
 import time
 import re
+import os
 from datetime import date
+from dotenv import load_dotenv
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, HRFlowable, PageBreak
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 from reportlab.lib import colors
 
+load_dotenv()
+
 client = anthropic.Anthropic()
-BRAVE_API_KEY = "BSAUO0NBcoBy3FpuCAyOXu8zTKtqk-L"
+BRAVE_API_KEY = os.getenv("BRAVE_API_KEY")
 
 
 def brave_search(query, count=10):
