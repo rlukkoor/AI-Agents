@@ -1,2 +1,4 @@
 token.json
 credentials.json
+memory.db
+.env
